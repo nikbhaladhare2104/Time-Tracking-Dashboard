@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--Very-dark-blue);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+/* ### Primary */
+
+--Blue: hsl(246, 80%, 60%);
+--Light-red : hsl(15, 100%, 70%);
+--Soft-blue: hsl(195, 74%, 62%);
+--Light-red-study : hsl(348, 100%, 68%);
+--Lime-green : hsl(145, 58%, 55%);
+--Violet : hsl(264, 64%, 52%);
+--Soft-orange: hsl(43, 84%, 65%);
+
+/* ### Neutral */
+
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+--Hover-Dark-blue:  hsl(236, 43%, 36%);
+
+}
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6 { 
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.container {
+  width: 940px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto, auto;
+  gap: 20px;
+
+}
+
+.profile-card {
+  background-color: var(--Dark-blue);
+  border-radius: 15px;
+  color: var(--Pale-Blue);
+  /* grid-row: 1 / 3;
+  grid-column: 1 / 2; */
+  grid-row: span 2;
+
+}
+.profile {
+  background-color: var(--Blue);
+  border-radius: 15px;
+  padding: 2rem;
+  height: 65%;
+}
+.profile-img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid white;
+  margin-bottom: 1.5rem;
+}
+.profile-report {
+  color: var(--Pale-Blue);
+  font-size: 12px;
+  font-weight: 400;
+}
+.profile-name {
+  /* margin-top: 1rem; */
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.interval {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+}
+.interval-title {
+  color: var(--Desaturated-blue);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.interval-title:hover {
+  color: white;
+  scale: 1.01;
+}
+
+
+.info-card {
+  position: relative;
+  /* Make this the containing block for absolutely positioned elements */
+  border-radius: 15px;
+  overflow: hidden;
+  width: 220px;
+  height: 220px;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  /* Ensure it is beneath the .info div */
+  margin-top: -5%;
+  margin-left: 60%;
+}
+
+.info {
+  position: absolute;
+  /* Position it absolutely within .info-card */
+  bottom: 0;
+  /* Align to the bottom of .info-card */
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: var(--Dark-blue);
+  z-index: 2;
+  /* Ensure it is on top of other elements */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  border-radius: 15px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+.info:hover {
+  background-color: var(--Hover-Dark-blue);
+  scale: 1.01;
+}
+
+.info-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1rem; */
+}
+
+.info-div > img {
+  cursor: pointer;
+}
+
+.info-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.info-time {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  /* letter-spacing: 0; */
+}
+.previous-time {
+  color: var(--Pale-Blue);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+@media screen and (max-width: 980px) {
+  main {
+    height: 100%;
+  }
+  .container {
+    margin: 4rem 0;
+    width: 460px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 1.5rem;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* PROFILE CARD */
+  .profile-card {
+    width: 100%;
+  }
+  .profile {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    align-items: center;
+  }
+  .profile-img{
+    margin: 0;
+  }
+  .profile-report {
+    font-size: 14px;
+  }
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  .interval {
+    flex-direction: row;
+    padding: 1.5rem;
+  }
+
+  /* INFO CARD */
+  .info-card {
+    width: 100%;
+    display: flex;
+    height: 150px;
+    /* height: 180px; */
+  }
+  .timeframes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  .info-time {
+    font-size: 2rem;
+  }
+
+}
