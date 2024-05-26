@@ -100,19 +100,24 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
-  gap: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  gap: 4px;
 }
 .interval-title {
   color: var(--Desaturated-blue);
   font-size: 1rem;
   font-weight: 400;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 30px;
 }
 .interval-title:hover {
   color: white;
   scale: 1.01;
+  background-color: var(--Hover-Dark-blue);
+  border-radius: 30px;
 }
 
 
@@ -199,6 +204,7 @@ main {
 @media screen and (max-width: 480px) {
   main {
     padding: 1.5rem;
+    min-height: 100%;
   }
   .container {
     width: 100%;
